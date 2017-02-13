@@ -1,7 +1,8 @@
 
 
 //gets the data from the url
-var data = $.ajax({
+var data =
+    $.ajax({
     url: `http://json-data.herokuapp.com/forms/`,
     dataType: "json",
 
@@ -27,29 +28,29 @@ function createForm (item) {
     } else if (item[i].type === "text") {
       var resultsHTML = `
       <div class ="text-box">
-        <i class ="smallIcon fa ${item[i].icon}"></i>
-        <textarea class ="form" placeholder ="${item[i].label}"></textarea>
+        <i class ="small-icon fa ${item[i].icon}"></i>
+        <input class ="form" placeholder ="${item[i].label}"></input>
       </div>
       `;
     } else if (item[i].type === "email") {
       var resultsHTML = `
       <div class ="email">
-        <i class ="smallIcon fa ${item[i].icon}"></i>
-        <textarea class ="form" placeholder ="${item[i].label}"></textarea>
+        <i class ="small-icon fa ${item[i].icon}"></i>
+        <input class ="form" placeholder ="${item[i].label}"></input>
       </div>
       `;
     } else if (item[i].type === "textarea") {
       var resultsHTML = `
       <div class ="comment-box">
-        <i class ="smallIcon fa ${item[i].icon}"></i>
-        <textarea class ="form" placeholder ="${item[i].label}"></textarea>
+        <i class ="small-icon fa ${item[i].icon}"></i>
+        <input class ="form" placeholder ="${item[i].label}"></input>
       </div>
       `;
     } else if (item[i].type === "tel") {
       var resultsHTML = `
       <div class ="telephone">
-        <i class ="smallIcon fa ${item[i].icon}"></i>
-        <textarea class ="form" placeholder ="${item[i].label}"></textarea>
+        <i class ="small-icon fa ${item[i].icon}"></i>
+        <input class ="form" placeholder ="${item[i].label}"></input>
       </div>
       `;
     }
