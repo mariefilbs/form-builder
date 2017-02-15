@@ -3,7 +3,7 @@
 //gets the data from the url
 var data =
     $.ajax({
-    url: `http://json-data.herokuapp.com/forms/`,
+    url: `https://json-data.herokuapp.com/forms/`,
     dataType: "json",
 
   });
