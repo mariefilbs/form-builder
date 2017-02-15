@@ -24,20 +24,6 @@ function createForm (item) {
         </div>
       `;
 
-    } else if (field.type === "text") {
-      var resultsHTML = `
-      <div id="${field.id}>
-        <i class ="small-icon fa ${field.icon}"></i>
-        <input class ="form" placeholder ="${field.label}"/>
-      </div>
-      `;
-    } else if (field.type === "email") {
-      var resultsHTML = `
-      <div id="${field.id}">
-        <i class ="small-icon fa ${field.icon}"></i>
-        <input class="form" placeholder="${field.label}"/>
-      </div>
-      `;
     } else if (field.type === "textarea") {
       var resultsHTML = `
       <div class ="comment-box">
@@ -45,7 +31,7 @@ function createForm (item) {
         <textarea class ="form" placeholder ="${field.label}"></textarea>
       </div>
       `;
-    } else if (field.type === "tel") {
+    } else if (field.type != "select" && field.type != "textarea") {
       var resultsHTML = `
       <div id="${field.id}">
         <i class ="small-icon fa ${field.icon}"></i>
@@ -53,7 +39,6 @@ function createForm (item) {
       </div>
       `;
     }
-
 
      $(".container").append(resultsHTML);
 
