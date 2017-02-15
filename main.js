@@ -9,48 +9,47 @@ var data =
   });
 
 function createForm (item) {
-  console.log(item);
   for (var i = 0; i < item.length; i++){
-    if (item[i].type === "select") {
+    var field = item[i];
+
+    if (field.type === "select") {
+      console.log(field);
       var resultsHTML = `
-        <div class = "dropDown">
+        <div id="${field.id}">
           <select class="language">
             <option> Select Language</option>
-            <option> ${item[i].options[0].label}</option>
-            <option> ${item[i].options[1].label}</option>
-            <option> ${item[i].options[2].label}</option>
-            <option> ${item[i].options[3].label}</option>
-            <option> ${item[i].options[4].label}</option>
+            ${setOptions(field.options)}
+
           </select>
         </div>
       `;
 
-    } else if (item[i].type === "text") {
+    } else if (field.type === "text") {
       var resultsHTML = `
-      <div class ="text-box">
-        <i class ="small-icon fa ${item[i].icon}"></i>
-        <input class ="form" placeholder ="${item[i].label}"></input>
+      <div id="${field.id}>
+        <i class ="small-icon fa ${field.icon}"></i>
+        <input class ="form" placeholder ="${field.label}"/>
       </div>
       `;
-    } else if (item[i].type === "email") {
+    } else if (field.type === "email") {
       var resultsHTML = `
-      <div class ="email">
-        <i class ="small-icon fa ${item[i].icon}"></i>
-        <input class ="form" placeholder ="${item[i].label}"></input>
+      <div id="${field.id}">
+        <i class ="small-icon fa ${field.icon}"></i>
+        <input class="form" placeholder="${field.label}"/>
       </div>
       `;
-    } else if (item[i].type === "textarea") {
+    } else if (field.type === "textarea") {
       var resultsHTML = `
       <div class ="comment-box">
-        <i class ="small-icon fa ${item[i].icon}"></i>
-        <input class ="form" placeholder ="${item[i].label}"></input>
+        <i class ="small-icon fa ${field.icon}"></i>
+        <textarea class ="form" placeholder ="${field.label}"></textarea>
       </div>
       `;
-    } else if (item[i].type === "tel") {
+    } else if (field.type === "tel") {
       var resultsHTML = `
-      <div class ="telephone">
-        <i class ="small-icon fa ${item[i].icon}"></i>
-        <input class ="form" placeholder ="${item[i].label}"></input>
+      <div id="${field.id}">
+        <i class ="small-icon fa ${field.icon}"></i>
+        <input class ="form" placeholder ="${field.label}"/>
       </div>
       `;
     }
@@ -59,7 +58,22 @@ function createForm (item) {
      $(".container").append(resultsHTML);
 
 };
+
 }
+
+function setOptions (option) {
+  var html = "";
+  // debugger;
+    for (var i = 0; i < option.length; i++) {
+      if (i < option.length) html += "<option>";
+      //console.log('THIS IS OPTION', option);
+      html += option[i].label + '</option>';
+      //console.log(html);
+
+    }
+  return html;
+}
+
 
 //data.then(console.log);
 data.then(createForm);

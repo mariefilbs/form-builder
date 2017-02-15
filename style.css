@@ -4,31 +4,43 @@
 
 body {
   margin-left: 350px;
-  width: 350px;
+  width: 538px;
+  height: 677px;
   border: 1px solid lightgrey; }
 
 input {
-  width: 80%;
-  height: 20px;
-  border-radius: 2px;
-  margin-bottom: 10px;
+  width: 485px;
+  height: 35px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-left: 15px;
   position: relative; }
 
 .form {
-  padding: 10px; }
+  padding-left: 25px; }
 
 .header {
   background: #428BCA;
   color: white;
-  height: 50px; }
+  height: 75px; }
 
 #title {
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 15px;
   padding-top: 11px; }
 
+.container {
+  margin-top: 35px; }
+
+textarea {
+  width: 485px;
+  height: 80px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  padding-top: 9px; }
+
 .footer {
-  height: 50px;
+  height: 75px;
   background: #C9DEF0; }
 
 button {
@@ -36,12 +48,22 @@ button {
   color: white;
   border: none;
   border-radius: 2px;
-  margin-top: 12px;
+  margin-top: 20px;
   margin-left: 20px;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  height: 35px;
+  width: 99px; }
 
 i.fa {
   color: grey;
   font-size: 1em;
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  padding-top: 6px;
+  padding-left: 21px; }
+
+select {
+  height: 35px;
+  width: 485px;
+  margin-left: 15px;
+  margin-bottom: 20px; }
